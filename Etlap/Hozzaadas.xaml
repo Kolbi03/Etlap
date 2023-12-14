@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Etlap"
         mc:Ignorable="d"
-        Title="Hozzaadas" Height="350" Width="200">
+        Title="Hozzaadas" Height="350" Width="350">
     <Grid>
 		<StackPanel Orientation="Vertical">
 			<StackPanel Orientation="Horizontal">

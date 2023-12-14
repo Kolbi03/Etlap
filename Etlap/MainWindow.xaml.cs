@@ -40,7 +40,9 @@ namespace Etlap
 
 		private void addButton_Click(object sender, RoutedEventArgs e)
 		{
-
+			Hozzaadas hozzaadas = new Hozzaadas(service);
+			hozzaadas.Closed += (_, _) => Read();
+			hozzaadas.ShowDialog();
 		}
 
 		private void buttonEmelesSzazalek_Click(object sender, RoutedEventArgs e)
