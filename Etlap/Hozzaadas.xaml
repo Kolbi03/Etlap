@@ -18,9 +18,13 @@
 				<TextBox x:Name="textBoxLeiras" Height="100" Width="120"></TextBox>
 			</StackPanel>
 
+			<StackPanel x:Name="radioButton" Orientation="Horizontal">
+				<Label Content="Kategória" Margin="0, 10"></Label>
+			</StackPanel>
 			<StackPanel Orientation="Horizontal">
-				<Label Content="Név" Margin="0, 10"></Label>
-				<TextBox x:Name="textBoxKategoria" Height="20" Width="100"></TextBox>
+				<RadioButton x:Name="radioEloetel" Content=" Előétel" Margin="5"></RadioButton>
+				<RadioButton x:Name="radioFoetel" Content="Főétel" Margin="5"></RadioButton>
+				<RadioButton x:Name="radioDesszert" Content="Desszert" Margin="5"></RadioButton>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal">
