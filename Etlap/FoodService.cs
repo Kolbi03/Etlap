@@ -35,10 +35,10 @@ namespace Etlap
 				{
 					Etel item = new Etel();
 					item.Id = reader.GetInt32("id");
-					item.Name = reader.GetString("name");
-					item.Description = reader.GetString("description");
-					item.Price = reader.GetInt32("price");
-					item.Category = reader.GetString("category");
+					item.Name = reader.GetString("nev");
+					item.Description = reader.GetString("leiras");
+					item.Price = reader.GetInt32("ar");
+					item.Category = reader.GetString("kategoria");
 					etelLista.Add(item);
 				}
 			}
@@ -70,6 +70,36 @@ namespace Etlap
 			MySqlCommand command = this.connect.CreateCommand();
 			command.CommandText = sql;
 			command.Parameters.AddWithValue("@id", id);
+			int affectedRows = command.ExecuteNonQuery();
+			CloseConnection();
+
+			return affectedRows == 1;
+		}
+
+		public bool UpdateSzazalek(int id,double szazalek, Etel etel)
+		{
+			OpenConnection();
+			string sql = "UPDATE etlap SET price = @price, WHERE id = @id";
+			MySqlCommand command = this.connect.CreateCommand();
+			command.CommandText = sql;
+			double ujAr = etel.Price * (1 + szazalek / 100);
+			command.Parameters.AddWithValue("@id", id);
+			command.Parameters.AddWithValue("@price", ujAr);
+			int affectedRows = command.ExecuteNonQuery();
+			CloseConnection();
+
+			return affectedRows == 1;
+		}
+
+		public bool UpdateForint(int id, int Forint, Etel etel)
+		{
+			OpenConnection();
+			string sql = "UPDATE etlap SET price = @price, WHERE id = @id";
+			MySqlCommand command = this.connect.CreateCommand();
+			command.CommandText = sql;
+			int ujAr = etel.Price + Forint;
+			command.Parameters.AddWithValue("@id", id);
+			command.Parameters.AddWithValue("@price", ujAr);
 			int affectedRows = command.ExecuteNonQuery();
 			CloseConnection();
 

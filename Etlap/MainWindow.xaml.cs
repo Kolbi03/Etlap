@@ -20,9 +20,17 @@ namespace Etlap
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		public FoodService service;
 		public MainWindow()
 		{
 			InitializeComponent();
+			this.service = new FoodService();
+			Read();
+		}
+
+		private void Read()
+		{
+			dataGridMenu.ItemsSource = this.service.GetAll();
 		}
 
 		private void buttonEmelesForint_Click(object sender, RoutedEventArgs e)
