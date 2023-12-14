@@ -30,17 +30,17 @@ namespace Etlap
 
 		}
 
+		private void addButton_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
 		private void buttonEmelesSzazalek_Click(object sender, RoutedEventArgs e)
 		{
 
 		}
 
 		private void deleteButton_Click(object sender, RoutedEventArgs e)
-		{
-
-		}
-
-		private void addButton_Click(object sender, RoutedEventArgs e)
 		{
 
 		}
