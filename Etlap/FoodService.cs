@@ -79,7 +79,7 @@ namespace Etlap
 		public bool UpdateSzazalek(int id,double szazalek, Etel etel)
 		{
 			OpenConnection();
-			string sql = "UPDATE etlap SET price = @price, WHERE id = @id";
+			string sql = "UPDATE etlap SET ar = @price WHERE id = @id";
 			MySqlCommand command = this.connect.CreateCommand();
 			command.CommandText = sql;
 			double ujAr = etel.Price * (1 + szazalek / 100);
@@ -94,7 +94,7 @@ namespace Etlap
 		public bool UpdateForint(int id, int Forint, Etel etel)
 		{
 			OpenConnection();
-			string sql = "UPDATE etlap SET price = @price, WHERE id = @id";
+			string sql = "UPDATE etlap SET ar = @price WHERE id = @id";
 			MySqlCommand command = this.connect.CreateCommand();
 			command.CommandText = sql;
 			int ujAr = etel.Price + Forint;
